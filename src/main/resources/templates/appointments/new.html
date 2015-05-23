@@ -9,10 +9,24 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <form th:action="@{/appointments/new}" th:object="${appointment}" method="POST">
-            <input type="text" th:field="*{detail}"/>
+            <table>
+                <tr>
+                    <td>Detail : </td>
+                    <td><input type="text" th:field="*{detail}"/>
+                        <small th:if="${#fields.hasErrors('detail')}"
+                               th:errors="*{detail}"
+                               th:classappend="${#fields.hasErrors('detail')} ? 'error'"></small>
+                    </td>
+                </tr>
+            </table>
             <input type="submit" name="save" value="save"/>
         </form>
     </body>

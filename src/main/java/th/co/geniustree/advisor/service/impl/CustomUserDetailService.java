@@ -5,18 +5,25 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import th.co.geniustree.advisor.domain.User;
 import th.co.geniustree.advisor.repository.UserRepository;
 
 /**
  * @author pramoth
  */
 @Service
-public class CustomUserDetailService implements UserDetailsService{
+public class CustomUserDetailService implements UserDetailsService {
+
     @Autowired
     private UserRepository repository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.findOne(username);
+        User findOne = repository.findOne(username);
+        if (findOne == null) {
+            throw new UsernameNotFoundException("Not found user");
+        }
+        return findOne;
     }
-    
+
 }

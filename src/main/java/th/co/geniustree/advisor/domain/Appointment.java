@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
@@ -33,6 +35,7 @@ public class Appointment implements Serializable{
     private Date starttime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date endtime;
+    @NotBlank(message = "Detail ไม่สามารถว่างได้ค่ะ")
     private String detail;
     private String teacher;
     private String student;
