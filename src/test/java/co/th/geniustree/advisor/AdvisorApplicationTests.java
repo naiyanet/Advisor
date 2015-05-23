@@ -1,5 +1,6 @@
-package advisor;
+package co.th.geniustree.advisor;
 
+import co.th.geniustree.advisor.AdvisorApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.web.WebAppConfiguration;
