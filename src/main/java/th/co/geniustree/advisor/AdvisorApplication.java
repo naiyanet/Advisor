@@ -1,4 +1,4 @@
-package co.th.geniustree.advisor;
+package th.co.geniustree.advisor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
