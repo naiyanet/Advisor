@@ -11,6 +11,23 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>START_DATE</td>
+                        <td>END_DATE</td>
+                        <td>DETAIL</td>
+                    </tr>
+                </thead>
+                <tr th:each="app : ${appointments}">
+                    <td th:text="${app.id}"></td>
+                    <td><span th:if="${app.starttime ne null}" th:text="${#dates.format(app.starttime, 'dd/MM/yyyy HH:mm')}"></span></td>
+                    <td th:text="${app.endtime}"></td>
+                    <td th:text="${app.detail}"></td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>

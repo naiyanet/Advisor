@@ -12,19 +12,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
  * @author Best
  */
 @Entity
+@Table(name="APPOINTMENT")
 public class Appointment implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private Date date;
+    @DateTimeFormat(pattern = "dd MMM yyyy HH:mm")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date starttime;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date endtime;
     private String detail;
     private String teacher;
@@ -36,14 +43,6 @@ public class Appointment implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Date getdate() {
-        return date;
-    }
-
-    public void setAppDate(Date date) {
-        this.date = date;
     }
 
     public Date getStarttime() {
@@ -107,8 +106,4 @@ public class Appointment implements Serializable{
         }
         return true;
     }
-            
-            
-    
-    
 }
