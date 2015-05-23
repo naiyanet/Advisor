@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>co.th.geniustree.advisor</groupId>
+	<groupId>th.co.geniustree.advisor</groupId>
 	<artifactId>advisor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -20,7 +20,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>advisor.AdvisorApplication</start-class>
+		<start-class>th.co.geniustree.advisor.AdvisorApplication</start-class>
 		<java.version>1.8</java.version>
 	</properties>
 
