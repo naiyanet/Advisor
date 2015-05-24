@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html layout:decorator="layout">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -16,50 +16,52 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        <form th:action="@{/appointments/new}" th:object="${appointment}" method="POST">
-            <table>
-                <tr>
-                    <td></td>
-                </tr>
-                <label>Start Time : </label>
-                <input type="text" th:field="*{starttime}">
-                <small th:if="${#fields.hasErrors('starttime')}"
-                       th:errors="*{starttime}"
-                       th:classappend="${#fields.hasErrors('starttime')} ? 'error'"></small>
-                <label>End Time : </label>
-                <input type="text" th:field="*{endtime}">
-                <small th:if="${#fields.hasErrors('endtime')}"
-                       th:errors="*{endtime}"
-                       th:classappend="${#fields.hasErrors('endtime')} ? 'error'"></small>
-                <tr>
-                    <td>Detail : </td>
-                    <td><input type="text" th:field="*{detail}"/>
-                        <small th:if="${#fields.hasErrors('detail')}"
-                               th:errors="*{detail}"
-                               th:classappend="${#fields.hasErrors('detail')} ? 'error'"></small>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Teacher : </td>
-                    <td>
-                        <input type="text" th:field="*{teacher}"/>
-                        <small th:if="${#fields.hasErrors('teacher')}"
-                               th:errors="*{teacher}"
-                               th:classappend="${#fields.hasErrors('teacher')} ? 'error'"></small>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Student : </td>
-                    <td>
-                        <input type="text" th:field="*{student}"/>
-                        <small th:if="${#fields.hasErrors('student')}"
-                               th:errors="*{student}"
-                               th:classappend="${#fields.hasErrors('student')} ? 'error'"></small>
-                    </td>
-                </tr>
-                </tr>
-            </table>
-            <input type="submit" name="save" value="save"/>
-        </form>
+        <div layout:fragment="content">
+            <form th:action="@{/appointments/new}" th:object="${appointment}" method="POST">
+                <table>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <label>Start Time : </label>
+                    <input type="text" th:field="*{starttime}">
+                    <small th:if="${#fields.hasErrors('starttime')}"
+                           th:errors="*{starttime}"
+                           th:classappend="${#fields.hasErrors('starttime')} ? 'error'"></small>
+                    <label>End Time : </label>
+                    <input type="text" th:field="*{endtime}">
+                    <small th:if="${#fields.hasErrors('endtime')}"
+                           th:errors="*{endtime}"
+                           th:classappend="${#fields.hasErrors('endtime')} ? 'error'"></small>
+                    <tr>
+                        <td>Detail : </td>
+                        <td><input type="text" th:field="*{detail}"/>
+                            <small th:if="${#fields.hasErrors('detail')}"
+                                   th:errors="*{detail}"
+                                   th:classappend="${#fields.hasErrors('detail')} ? 'error'"></small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Teacher : </td>
+                        <td>
+                            <input type="text" th:field="*{teacher}"/>
+                            <small th:if="${#fields.hasErrors('teacher')}"
+                                   th:errors="*{teacher}"
+                                   th:classappend="${#fields.hasErrors('teacher')} ? 'error'"></small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Student : </td>
+                        <td>
+                            <input type="text" th:field="*{student}"/>
+                            <small th:if="${#fields.hasErrors('student')}"
+                                   th:errors="*{student}"
+                                   th:classappend="${#fields.hasErrors('student')} ? 'error'"></small>
+                        </td>
+                    </tr>
+                    </tr>
+                </table>
+                <input type="submit" name="save" value="save"/>
+            </form>
+        </div>
     </body>
 </html>
