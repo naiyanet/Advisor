@@ -7,6 +7,6 @@ import th.co.geniustree.advisor.domain.User;
 /**
  * @author pramoth
  */
-public interface UserRepository extends JpaRepository<User, String>{
-    
+public interface UserRepository extends JpaRepository<User, String> {
+
 }

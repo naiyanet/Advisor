@@ -10,7 +10,8 @@ import th.co.geniustree.advisor.domain.Appointment;
  *
  * @author User
  */
-public interface AppointmentRepository extends JpaRepository<Appointment, Integer>{
-    public Page<Appointment> findByTeacherAndStudent(String teacher,String student,Pageable pagable);
-    
+public interface AppointmentRepository extends JpaRepository<Appointment, Integer> {
+
+    public Page<Appointment> findByTeacherAndStudent(String teacher, String student, Pageable pagable);
+
 }

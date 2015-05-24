@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @author pramoth
  */
 @Entity
-@Table(name="USERS")
+@Table(name = "USERS")
 public class User implements UserDetails, Serializable {
 
     @Id
