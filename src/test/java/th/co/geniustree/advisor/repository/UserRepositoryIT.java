@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import th.co.geniustree.advisor.AdvisorApplication;
 import th.co.geniustree.advisor.domain.User;
 
+
 /**
  *
  * @author pramoth

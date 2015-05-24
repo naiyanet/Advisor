@@ -19,13 +19,15 @@ and open the template in the editor.
         <form th:action="@{/appointments/new}" th:object="${appointment}" method="POST">
             <table>
                 <tr>
+                    <td></td>
+                </tr>
                 <label>Start Time : </label>
-                <input type="date" th:field="*{starttime}">
+                <input type="text" th:field="*{starttime}">
                 <small th:if="${#fields.hasErrors('starttime')}"
                        th:errors="*{starttime}"
                        th:classappend="${#fields.hasErrors('starttime')} ? 'error'"></small>
                 <label>End Time : </label>
-                <input type="date" th:field="*{endtime}">
+                <input type="text" th:field="*{endtime}">
                 <small th:if="${#fields.hasErrors('endtime')}"
                        th:errors="*{endtime}"
                        th:classappend="${#fields.hasErrors('endtime')} ? 'error'"></small>
