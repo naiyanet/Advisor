@@ -28,9 +28,10 @@ public class AppointmentController {
         model.addAttribute("appointments", findAll);
         return "appointments/list";
     }
+
     @RequestMapping(value = "/appointments/search", method = RequestMethod.GET)
-    public String list(@RequestParam("student")String student,@RequestParam("teacher")String teacher,Model model, Pageable pageable) {
-        Page<Appointment> findAll = appointmentRepository.findByTeacherAndStudent(student,teacher,pageable);
+    public String list(@RequestParam("student") String student, @RequestParam("teacher") String teacher, Model model, Pageable pageable) {
+        Page<Appointment> findAll = appointmentRepository.findByTeacherAndStudent(student, teacher, pageable);
         model.addAttribute("appointments", findAll);
         return "appointments/list";
     }

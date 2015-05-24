@@ -19,6 +19,8 @@ and open the template in the editor.
                         <td>START_DATE</td>
                         <td>END_DATE</td>
                         <td>DETAIL</td>
+                        <td>TEACHER</td>
+                        <td>STUDENT</td>
                     </tr>
                 </thead>
                 <tr th:each="app : ${appointments}">
@@ -26,6 +28,8 @@ and open the template in the editor.
                     <td><span th:if="${app.starttime ne null}" th:text="${#dates.format(app.starttime, 'dd/MM/yyyy HH:mm')}"></span></td>
                     <td th:text="${app.endtime}"></td>
                     <td th:text="${app.detail}"></td>
+                    <td th:text="${app.teacher}"></td>
+                    <td th:text="${app.student}"></td>
                 </tr>
             </table>
         </div>

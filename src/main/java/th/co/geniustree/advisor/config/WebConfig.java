@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @author pramoth
  */
 @Configuration
-public class WebConfig implements ServletContextInitializer,EmbeddedServletContainerCustomizer{
+public class WebConfig implements ServletContextInitializer, EmbeddedServletContainerCustomizer {
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -24,7 +24,7 @@ public class WebConfig implements ServletContextInitializer,EmbeddedServletConta
 
     @Override
     public void customize(ConfigurableEmbeddedServletContainer servletContext) {
-        
+
     }
-    
+
 }
