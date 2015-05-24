@@ -19,6 +19,9 @@ and open the template in the editor.
         <form th:action="@{/appointments/new}" th:object="${appointment}" method="POST">
             <table>
                 <tr>
+                    <td></td>
+                </tr>
+                <tr>
                     <td>Detail : </td>
                     <td><input type="text" th:field="*{detail}"/>
                         <small th:if="${#fields.hasErrors('detail')}"

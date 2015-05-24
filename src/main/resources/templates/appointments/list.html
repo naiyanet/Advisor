@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div>
-            <table>
+    <body
+        <div>  
+            <table style="width:80%" cellspecing="1" bgcolor="#99ccff">
+                <caption><h1>Hello Teacher</h1></caption>
                 <thead>
                     <tr>
                         <td>ID</td>
                         <td>START_DATE</td>
                         <td>END_DATE</td>
                         <td>DETAIL</td>
+                        <td>TEACHER</td>
+                        <td>STUDENT</td>
                     </tr>
                 </thead>
                 <tr th:each="app : ${appointments}">
                     <td th:text="${app.id}"></td>
                     <td><span th:if="${app.starttime ne null}" th:text="${#dates.format(app.starttime, 'dd/MM/yyyy HH:mm')}"></span></td>
                     <td th:text="${app.endtime}"></td>
-                    <td th:text="${app.detail}"></td>
+                    <td><span th:if="${app.starttime ne null}" th:text="${app.detail}"></span></td>
+                    <td><span th:if="${app.starttime ne null}" th:text="${app.teacher}"></span></td>
+                    <td><span th:if="${app.starttime ne null}" th:text="${app.student}"></span></td>
+                    <td>
+                        <select name ="determine">
+                            <option value ="access">Accept</option>
+                            <option value ="add">Add</option>
+                            <option value ="drop">Drop</option>
+                            <option value ="cencle">Cancle</option>
+                            <option value ="delete">Delete</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" value="submit">
+                    </td>
                 </tr>
             </table>
         </div>
