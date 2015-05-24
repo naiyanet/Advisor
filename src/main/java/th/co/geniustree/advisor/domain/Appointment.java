@@ -24,20 +24,25 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author Best
  */
 @Entity
-@Table(name="APPOINTMENT")
-public class Appointment implements Serializable{
-    
+@Table(name = "APPOINTMENT")
+public class Appointment implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @DateTimeFormat(pattern = "dd MMM yyyy HH:mm")
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
     @Temporal(TemporalType.TIMESTAMP)
+    @NotNull(message = "กรุณาระบุวันเวลาเริ่มต้น")
     private Date starttime;
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
     @Temporal(TemporalType.TIMESTAMP)
+    @NotNull(message = "กรุณาระบุวันเวลาสิ้นสุด")
     private Date endtime;
     @NotBlank(message = "Detail ไม่สามารถว่างได้ค่ะ")
     private String detail;
+    @NotBlank(message = "Teacher ไม่สามารถว่างได้ค่ะ")
     private String teacher;
+    @NotBlank(message = "Student ไม่สามารถว่างได้ค่ะ")
     private String student;
 
     public Integer getId() {

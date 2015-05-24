@@ -20,17 +20,17 @@ import th.co.geniustree.advisor.domain.User;
 @SpringApplicationConfiguration(classes = AdvisorApplication.class)
 @Transactional
 public class UserRepositoryIT {
-    
+
     @Autowired
     private UserRepository userRepository;
-    
+
     @Test
-    public void savedUserMustFound(){
+    public void savedUserMustFound() {
         User user = new User();
         user.setEmail("xxxx");
         userRepository.save(user);
         User findOne = userRepository.findOne("xxxx");
         Assertions.assertThat(findOne).isNotNull();
     }
-    
+
 }
