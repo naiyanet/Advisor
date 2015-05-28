@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import th.co.geniustree.advisor.service.impl.CustomUserDetailService;
 
 /**
@@ -17,7 +18,7 @@ import th.co.geniustree.advisor.service.impl.CustomUserDetailService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private CustomUserDetailService userDetailService;
+    private UserDetailsService userDetailService;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
